@@ -123,10 +123,7 @@ export abstract class Schema {
     }
 
     static is(type: DefinitionType) {
-        return (
-            type['_definition'] &&
-            type['_definition'].schema !== undefined
-        );
+        return Schema.isPrototypeOf(type);
     }
 
     protected $changes: ChangeTree;
